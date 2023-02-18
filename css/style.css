@@ -319,9 +319,9 @@ header {
 }
 
 .header__body {
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -450,7 +450,7 @@ h3 {
 }
 
 .questions {
-  border: 1px solid red;
+  border-top: 1px solid red;
   padding-top: 35px;
   padding-bottom: 85px;
 }
@@ -463,6 +463,12 @@ h3 {
   margin-bottom: 80px;
   color: #fff;
   line-height: 130%;
+}
+
+.questions__p,
+.questions__net {
+  position: relative;
+  z-index: 2;
 }
 
 .questions__net {
@@ -607,7 +613,7 @@ h3 {
 }
 
 .subfooter__input button {
-  margin-top: 18px;
+  margin-top: 10px;
   font-size: 28px;
   line-height: 120%;
   padding-top: 25px;

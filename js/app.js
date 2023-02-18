@@ -77,7 +77,7 @@ SUBFOOTER_SUCCSES_CLOSE.addEventListener('click', ()=>{
 	if(TYPE_MODEL.value.length > 2){
 		TYPE_MODEL.style.border = "2px solid transparent";
 	}else{
-		TYPE_MODEL.style.border = " 2px solid red";
+		TYPE_MODEL.style.border = "2px solid red";
 	}
 
 

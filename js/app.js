@@ -44,11 +44,11 @@ SUBFOOTER_SUCCSES_CLOSE.addEventListener('click', ()=>{
 	
 
 
-			const TYPE_CAR = document.querySelector("#subfooterTypeCar");
+			const CARS_CAR = document.querySelector("#subfooterTypeCar");
 
-			const TYPE_MODEL = document.querySelector("#subfooterModelCar");
+			const CARS_MODEL = document.querySelector("#subfooterModelCar");
 
-			const TYPE_YEAR = document.querySelector("#subfooterYearCar");
+			const CARS_YEAR = document.querySelector("#subfooterYearCar");
 
 			const CAR_PRICE = document.querySelector("#subfooterPriceCar");
 			
@@ -67,31 +67,31 @@ SUBFOOTER_SUCCSES_CLOSE.addEventListener('click', ()=>{
 		subfooterPhone.style.border = "2px solid red";
 	}
 
-	if(TYPE_CAR.value.length > 2){
-		TYPE_CAR.style.border = "2px solid transparent";
+	if(CARS_CAR.value.length > 2){
+		CARS_CAR.style.border = "2px solid transparent";
 	}else{
-		TYPE_CAR.style.border = "2px solid red";
+		CARS_CAR.style.border = "2px solid red";
 	}
 
 
-	if(TYPE_MODEL.value.length > 2){
-		TYPE_MODEL.style.border = "2px solid transparent";
+	if(CARS_MODEL.value.length > 2){
+		CARS_MODEL.style.border = "2px solid transparent";
 	}else{
-		TYPE_MODEL.style.border = "2px solid red";
+		CARS_MODEL.style.border = "2px solid red";
 	}
 
 
 
-	if(Number.isInteger(+TYPE_YEAR.value) && +TYPE_YEAR.value > 1800 && +TYPE_YEAR.value < 2300){
+	if(Number.isInteger(+CARS_YEAR.value) && +CARS_YEAR.value > 1800 && +CARS_YEAR.value < 2300){
 	
-		TYPE_YEAR.style.border = "2px solid transparent";
+		CARS_YEAR.style.border = "2px solid transparent";
 	}else{
-		TYPE_YEAR.style.border = "2px solid red";
+		CARS_YEAR.style.border = "2px solid red";
 	}
 
 
 
-let mainReg = subfooterName.value.length > 2 && mask.masked.isComplete && TYPE_CAR.value.length > 2 && TYPE_MODEL.value.length > 2 && Number.isInteger(+TYPE_YEAR.value) && +TYPE_YEAR.value > 1800 && +TYPE_YEAR.value < 2300;
+let mainReg = subfooterName.value.length > 2 && mask.masked.isComplete && CARS_CAR.value.length > 2 && CARS_MODEL.value.length > 2 && Number.isInteger(+CARS_YEAR.value) && +CARS_YEAR.value > 1800 && +CARS_YEAR.value < 2300;
 
 if(mainReg){
 	
@@ -109,9 +109,9 @@ if(mainReg){
 		  body: JSON.stringify({
 			 name: subfooterName.value,
 			 tell: subfooterPhone.value,
-			 car: TYPE_CAR.value,
-			 model: TYPE_MODEL.value,
-			 year: TYPE_YEAR.value,
+			 car: CARS_CAR.value,
+			 model: CARS_MODEL.value,
+			 year: CARS_YEAR.value,
 			 price: CAR_PRICE.value
 		  }),
 		});
@@ -121,9 +121,9 @@ if(mainReg){
 
 		   subfooterName.value = "";
 			  subfooterPhone.value = "";
-			  TYPE_CAR.value = "";
-			  TYPE_MODEL.value = "";
-			 TYPE_YEAR.value = "";
+			  CARS_CAR.value = "";
+			  CARS_MODEL.value = "";
+			 CARS_YEAR.value = "";
 			 CAR_PRICE.value = "";
 
 		  SUBFOOTER_SUCCSES.classList.add('active');
@@ -141,43 +141,7 @@ if(mainReg){
 
 }
  });
-
- 
-
- $('document').ready(()=>{
-	$('.accordion__btn').click(function(){
-		$(this).next('.accordion__content').slideToggle();
-		$(this).toggleClass('active');
-	});
- });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- const BURGER_BUTTON = document.querySelector('.header__burger');
+const BURGER_BUTTON = document.querySelector('.header__burger');
 const BURGER_BODY = document.querySelector(".header__body");
 const BURGER_LINK = document.querySelectorAll(".header__body li");
 
@@ -192,6 +156,16 @@ const BURGER_LINK = document.querySelectorAll(".header__body li");
 		BURGER_BUTTON.classList.toggle('active');
 	})
  });
+
+
+ $('document').ready(()=>{
+	$('.accordion__btn').click(function(){
+		$(this).next('.accordion__content').slideToggle();
+		$(this).toggleClass('active');
+	});
+ });
+
+
 
 
 

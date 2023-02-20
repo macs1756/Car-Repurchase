@@ -427,8 +427,8 @@ h1 {
   position: absolute;
   z-index: 2;
   background: rgba(54, 51, 52, 0.5);
-  -webkit-backdrop-filter: blur(50px);
-          backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   border-radius: 12px;
   max-width: 40%;
   top: 44px;
@@ -452,6 +452,11 @@ h3 {
   font-weight: 700;
   line-height: 110%;
   font-size: 42px;
+}
+
+.z2 {
+  position: relative;
+  z-index: 2;
 }
 
 .header__burger {
@@ -478,6 +483,7 @@ h3 {
 .initial {
   margin-top: 140px;
   padding-left: 100px;
+  position: relative;
 }
 
 .initial__wr {
@@ -487,6 +493,8 @@ h3 {
   display: grid;
   -ms-grid-columns: 0.25fr 0.75fr;
   grid-template-columns: 0.25fr 0.75fr;
+  position: relative;
+  z-index: 2;
 }
 
 .initial__content {
@@ -525,6 +533,32 @@ h3 {
 
 .initial__p img {
   width: 26px;
+  -webkit-animation: arrowAnimation 1s linear infinite alternate 0s forwards;
+          animation: arrowAnimation 1s linear infinite alternate 0s forwards;
+}
+
+@-webkit-keyframes arrowAnimation {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+}
+
+@keyframes arrowAnimation {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
 }
 
 .initial__btn {
@@ -543,12 +577,98 @@ h3 {
 
 .initial__phone img {
   margin-right: 10px;
+  -webkit-animation-name: trin;
+          animation-name: trin;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .initial__phone a {
   color: #65A792;
   line-height: 120%;
   font-size: 26px;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+@-webkit-keyframes trin {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  20%, 32%, 44%, 56%, 68% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  23%, 35%, 47%, 59%, 71% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  26%, 38%, 50%, 62%, 74% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  29%, 41%, 53%, 65%, 77% {
+    -webkit-transform: rotate3d(0, 0, 1, -15deg);
+            transform: rotate3d(0, 0, 1, -15deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+@keyframes trin {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  20%, 32%, 44%, 56%, 68% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  23%, 35%, 47%, 59%, 71% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+            transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  26%, 38%, 50%, 62%, 74% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  29%, 41%, 53%, 65%, 77% {
+    -webkit-transform: rotate3d(0, 0, 1, -15deg);
+            transform: rotate3d(0, 0, 1, -15deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+            transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.initiall__blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 700px;
+  -webkit-transform: translate(0%, 15%);
+      -ms-transform: translate(0%, 15%);
+          transform: translate(0%, 15%);
 }
 
 .questions {
@@ -662,6 +782,74 @@ h3 {
   position: absolute;
   top: 20%;
   right: 0;
+}
+
+.about {
+  padding-top: 85px;
+  color: #fff;
+  position: relative;
+}
+
+.about__p {
+  padding-top: 45px;
+  font-size: 24px;
+  line-height: 120%;
+  padding-bottom: 40px;
+  max-width: 75%;
+}
+
+.about__p p:nth-child(2) {
+  margin-top: 30px;
+}
+
+.about__net {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px 20px;
+}
+
+.about__net-item {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: rgba(101, 167, 146, 0.1);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  border-radius: 10px;
+}
+
+.about__net-item img {
+  height: 85px;
+}
+
+.about__net-item h4 {
+  margin-top: 23px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 120%;
+}
+
+.about__net-item p {
+  margin-top: 15px;
+  font-size: 22px;
+  line-height: 120%;
+}
+
+.about__net-ico {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.about__blur {
+  display: none;
 }
 
 .subfooter__net {
@@ -977,6 +1165,17 @@ footer {
   .header__body {
     display: none;
   }
+
+  .about__blur {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform: translate(25%, -50%);
+        -ms-transform: translate(25%, -50%);
+            transform: translate(25%, -50%);
+    width: 800px;
+  }
 }
 
 @media (max-width: 1510px) {
@@ -1064,6 +1263,10 @@ footer {
     font-size: calc(14px + 12 * ((100vw - 320px) / 1510));
   }
 
+  .initiall__blur {
+    width: calc(350px + 350 * ((100vw - 320px) / 1510));
+  }
+
   .questions {
     padding-top: calc(15px + 20 * ((100vw - 320px) / 1510));
   }
@@ -1110,6 +1313,46 @@ footer {
 
   .accordion__content {
     padding-bottom: calc(12px + 34 * ((100vw - 320px) / 1510));
+  }
+
+  .about {
+    padding-top: calc(20px + 65 * ((100vw - 320px) / 1510));
+  }
+
+  .about__p {
+    padding-top: calc(15px + 30 * ((100vw - 320px) / 1510));
+  }
+
+  .about__p {
+    font-size: calc(14px + 10 * ((100vw - 320px) / 1510));
+  }
+
+  .about__net-item {
+    padding-left: calc(20px + -8 * ((100vw - 320px) / 1510));
+  }
+
+  .about__net-item {
+    padding-right: calc(20px + -8 * ((100vw - 320px) / 1510));
+  }
+
+  .about__net-item {
+    padding-top: calc(20px + 10 * ((100vw - 320px) / 1510));
+  }
+
+  .about__net-item {
+    padding-bottom: calc(20px + 10 * ((100vw - 320px) / 1510));
+  }
+
+  .about__net-item img {
+    height: calc(50px + 35 * ((100vw - 320px) / 1510));
+  }
+
+  .about__net-item h4 {
+    font-size: calc(18px + 8 * ((100vw - 320px) / 1510));
+  }
+
+  .about__net-item p {
+    font-size: calc(14px + 8 * ((100vw - 320px) / 1510));
   }
 
   .subfooter__net h4 {
@@ -1203,6 +1446,11 @@ footer {
     -ms-grid-columns: 0.35fr 0.65fr;
     grid-template-columns: 0.35fr 0.65fr;
   }
+
+  .about__net {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1266,6 +1514,23 @@ footer {
     padding-right: 100px;
     text-align: center;
   }
+
+  .initiall__blur {
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -80%);
+        -ms-transform: translate(-50%, -80%);
+            transform: translate(-50%, -80%);
+  }
+
+  .about__p {
+    padding-bottom: 30px;
+    max-width: 100%;
+  }
+
+  .about__p p:nth-child(2) {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 767px) and (max-width: 1510px) {
@@ -1310,6 +1575,12 @@ footer {
     -webkit-transform: translateX(25%);
         -ms-transform: translateX(25%);
             transform: translateX(25%);
+  }
+
+  .about__net {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   footer {
@@ -1364,6 +1635,12 @@ footer {
   .initial__p img {
     padding-top: 5px;
   }
+
+  .initiall__blur {
+    -webkit-transform: translate(-65%, -75%);
+        -ms-transform: translate(-65%, -75%);
+            transform: translate(-65%, -75%);
+  }
 }
 
 @media (max-width: 420px) and (max-width: 1510px) {
@@ -1373,6 +1650,12 @@ footer {
 
   .initial__phone {
     padding-left: calc(15px + 85 * ((100vw - 320px) / 1510));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1510px) {
+  .about__blur {
+    width: calc(500px + 300 * ((100vw - 320px) / 1510));
   }
 }
 
@@ -1387,5 +1670,9 @@ footer {
 
   .btn:hover {
     background: #4f8b78;
+  }
+
+  .initial__phone a:hover {
+    color: #4f8b78;
   }
 }

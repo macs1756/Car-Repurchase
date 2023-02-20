@@ -158,6 +158,139 @@ const BURGER_LINK = document.querySelectorAll(".header__body li");
  });
 
 
+ let ATTAINMENT_COUNT_1 = document.querySelector(".count1");
+ let ATTAINMENT_COUNT_2 = document.querySelector(".count2");
+ let ATTAINMENT_COUNT_3 = document.querySelector(".count3").innerText;
+ let ATTAINMENT_COUNT_4 = document.querySelector(".count4").innerText;
+
+
+ let  ATTAINMENT_COUNT_1_CLEAN = +ATTAINMENT_COUNT_1.innerText;
+ let  ATTAINMENT_COUNT_2_CLEAN = +ATTAINMENT_COUNT_2.innerText;
+ let  ATTAINMENT_COUNT_3_CLEAN = ATTAINMENT_COUNT_3.replace(/\s+/g, '');
+ let  ATTAINMENT_COUNT_4_CLEAN = ATTAINMENT_COUNT_4.replace(/\s+/g, '');
+
+ 
+
+ function animateValue(el, start, end, duration) {
+	let range = end - start;
+	let current = start;
+	let increment = end > start ? 1 : -1;
+	let stepTime = Math.abs(Math.floor(duration / range));
+	let obj = document.querySelector(el);
+	let timer = setInterval(function() {
+	  current += increment;
+	  obj.innerHTML = current;
+	  if (current == end) {
+		 clearInterval(timer);
+	  }
+	}, stepTime);
+	
+ }
+
+
+ function animateValue2(el, start, end, duration) {
+	let range = end - start;
+	let current = start;
+	
+	
+
+	let obj = document.querySelector(el);
+
+
+	let timer = setInterval(function() {
+
+		if(current+5 >= end){
+			
+			current = end;
+		}else{
+			current += 5;
+		}
+	  
+		obj.innerHTML = current;
+	 
+	}, 50);
+	
+ }
+
+
+ function animateValue3(el, start, end, duration) {
+	let range = end - start;
+	let current = start;
+	
+	let obj = document.querySelector(el);
+
+	let timer = setInterval(function() {
+
+		if(current+100 >= end){
+			
+			current = end;
+		}else{
+			current += 100;
+		}
+	  
+		obj.innerHTML = current;
+	 
+	}, 10);
+
+ }
+
+
+ function animateValue4(el, start, end, duration) {
+	let range = end - start;
+	let current = start;
+	
+	let obj = document.querySelector(el);
+
+	let timer = setInterval(function() {
+
+		if(current+522 >= end){
+			
+			current = end;
+		}else{
+			current += 522;
+		}
+	  
+		obj.innerHTML = current;
+	 
+	}, 10);
+
+ }
+
+ 
+var element = document.querySelector(".bought__btn");
+
+let flugCounter = true;
+
+
+window.addEventListener("scroll", function() {
+
+  var rect = element.getBoundingClientRect();
+  var visible = (rect.top <= window.innerHeight / 2) && (rect.bottom >= window.innerHeight / 2);
+  
+  if (visible) {
+	
+	if(flugCounter){
+	animateValue(".count1", 0, ATTAINMENT_COUNT_1_CLEAN , 1000) ;
+	animateValue2(".count2", 0, ATTAINMENT_COUNT_2_CLEAN, 1000) ;
+	animateValue3(".count3", 0, ATTAINMENT_COUNT_3_CLEAN, 1000) ;
+	animateValue4(".count4", 0, ATTAINMENT_COUNT_4_CLEAN, 1000) ;
+	}
+
+	flugCounter = false;
+
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
  $('document').ready(()=>{
 	$('.accordion__btn').click(function(){
 		$(this).next('.accordion__content').slideToggle();
